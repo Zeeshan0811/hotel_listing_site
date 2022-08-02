@@ -1,0 +1,60 @@
+.video-banner {
+    position: relative;
+    background-color: black;
+    height: 100vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.video-banner video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.video-banner .container {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.video-banner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.icon_form .form-control.full-space {
+    padding-left: 15px;
+}
+
+@media(pointer: coarse) and(hover: none) {
+    .video-banner {
+        background: url('../images/banner_1.jpg') black no-repeat center center scroll;
+    }
+
+    .video-banner video {
+        display: none;
+    }
+}
+
+@media only screen and(max-width: 991px) {
+    .header_wrap.dark_skin #navbarSupportedContent .navbar-nav:not([class*="bg_"]):not([class*="bg-"]) {
+        background-color: #fe99fe;
+    }
+}

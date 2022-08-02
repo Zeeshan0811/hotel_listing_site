@@ -1,0 +1,12 @@
+@media print {
+    .no-print,
+    .no-print * {
+        display: none !important;
+    }
+}
+
+
+/* .navbar-dark,
+.sidebar-dark {
+    background-color: #ff99ff;
+} */

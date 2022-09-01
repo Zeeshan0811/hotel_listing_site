@@ -16,48 +16,9 @@ export default function Sidebar() {
       </div>
 
       <div className="sidebar-content">
-        <div className="sidebar-user">
-          <div className="card-body">
-            <div className="media">
-              <div className="mr-3">
-                <a href="#">
-                  <Image
-                    src="/upload/user/default.png"
-                    width="38"
-                    height="38"
-                    className="rounded-circle"
-                    alt=""
-                  />
-                </a>
-              </div>
-
-              <div className="media-body">
-                <div className="media-title font-weight-semibold">Name</div>
-                <div className="font-size-xs opacity-50">
-                  <i className="icon-pin font-size-sm"></i> &nbsp; Address
-                </div>
-              </div>
-
-              <div className="ml-3 align-self-center">
-                <a
-                  href="<?php echo base_url('admin/setting/user'); ?>"
-                  className="text-white"
-                >
-                  <i className="icon-cog3"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <div className="card card-sidebar-mobile">
           <ul className="nav nav-sidebar" data-nav-type="accordion">
-            <li className="nav-item-header">
-              <div className="text-uppercase font-size-xs line-height-xs">
-                Main
-              </div>
-              <i className="icon-menu" title="Main"></i>
-            </li>
             <li className="nav-item">
               <Link href="/">
                 <a className="nav-link">
@@ -68,7 +29,7 @@ export default function Sidebar() {
             </li>
             <li className="nav-item nav-item-submenu">
               <a href="#" className="nav-link">
-                <i className="icon-stack"></i> <span>Asset</span>
+                <i className="icon-stack"></i> <span>Category</span>
               </a>
               <ul className="nav nav-group-sub" data-submenu-title="Starter kit">
                 <li className="nav-item">
@@ -78,7 +39,7 @@ export default function Sidebar() {
                 </li>
                 <li className="nav-item">
                   <a href="/admin/asset/list" className="nav-link">
-                    Asset List
+                    Category List
                   </a>
                 </li>
               </ul>
@@ -109,12 +70,12 @@ export default function Sidebar() {
                 data-submenu-title="Starter kit"
               >
                 <li className="nav-item">
-                  <a href="/hotel/add" className="nav-link">
+                  <a href="/admin/hotel/add" className="nav-link">
                     Add New
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="/hotel/list" className="nav-link">
+                  <a href="/admin/hotel/list" className="nav-link">
                     Hotel List
                   </a>
                 </li>

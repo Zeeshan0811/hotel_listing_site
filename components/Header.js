@@ -10,7 +10,7 @@ export default function Header() {
                         layout='fill'
                         width='90px'
                         height="100px"
-                        loading="lazy"/>
+                        loading="lazy" />
                 </a>
             </div>
 
@@ -38,7 +38,7 @@ export default function Header() {
                     <li className="nav-item dropdown dropdown-user">
                         <a href="#" className="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
                             <Image src="" className="rounded-circle mr-2" height="34" width="34" alt=""></Image>
-                            <span>Name</span>
+                            <span>Admin</span>
                         </a>
 
                         <div className="dropdown-menu dropdown-menu-right">

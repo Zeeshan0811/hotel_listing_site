@@ -15,7 +15,6 @@ export default function Footer() {
 
       <div className="navbar-collapse collapse" id="navbar-footer">
         <span className="navbar-text">&copy; {new Date().getFullYear()}</span>
-
         <ul className="navbar-nav ml-lg-auto">
           <li className="nav-item">
             <a href="#" className="navbar-nav-link" target="_blank">

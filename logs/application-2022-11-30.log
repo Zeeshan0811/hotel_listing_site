@@ -1,0 +1,11 @@
+2022-11-30 12:42:34 [development] error: RangeError [ERR_HTTP_INVALID_STATUS_CODE]: Invalid status code: 4014
+    at ServerResponse.writeHead (_http_server.js:255:11)
+    at ServerResponse.writeHead (F:\Projects\Javascript\hotel_management\node_modules\next\dist\compiled\compression\index.js:46:263)
+    at ServerResponse._implicitHeader (_http_server.js:246:8)
+    at ServerResponse.end (F:\Projects\Javascript\hotel_management\node_modules\next\dist\compiled\compression\index.js:22:748)
+    at ServerResponse.apiRes.end (F:\Projects\Javascript\hotel_management\node_modules\next\dist\server\api-utils\node.js:159:25)
+    at sendData (F:\Projects\Javascript\hotel_management\node_modules\next\dist\server\api-utils\node.js:305:9)
+    at ServerResponse.apiRes.send (F:\Projects\Javascript\hotel_management\node_modules\next\dist\server\api-utils\node.js:162:31)
+    at sendJson (F:\Projects\Javascript\hotel_management\node_modules\next\dist\server\api-utils\node.js:315:9)
+    at ServerResponse.apiRes.json (F:\Projects\Javascript\hotel_management\node_modules\next\dist\server\api-utils\node.js:163:31)
+    at handler (webpack-internal:///(api)/./pages/api/hotel/[hotel_id].js:28:30)

@@ -1,0 +1,10 @@
+2022-12-06 17:55:45 [development] error: ReferenceError: Hotel is not defined
+    at handler (webpack-internal:///(api)/./pages/api/user/list.js:14:22)
+    at Object.apiResolver (F:\Projects\Javascript\hotel_management\node_modules\next\dist\server\api-utils\node.js:179:15)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async DevServer.runApi (F:\Projects\Javascript\hotel_management\node_modules\next\dist\server\next-server.js:381:9)
+    at async Object.fn (F:\Projects\Javascript\hotel_management\node_modules\next\dist\server\base-server.js:500:37)
+    at async Router.execute (F:\Projects\Javascript\hotel_management\node_modules\next\dist\server\router.js:213:36)
+    at async DevServer.run (F:\Projects\Javascript\hotel_management\node_modules\next\dist\server\base-server.js:619:29)
+    at async DevServer.run (F:\Projects\Javascript\hotel_management\node_modules\next\dist\server\dev\next-dev-server.js:536:20)
+    at async DevServer.handleRequest (F:\Projects\Javascript\hotel_management\node_modules\next\dist\server\base-server.js:320:20)

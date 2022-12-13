@@ -36,16 +36,6 @@ export default function HeadFiles() {
         rel="stylesheet"
         type="text/css"
       />
-      <link
-        href="/assets/admin/css/jquery-ui.css"
-        rel="stylesheet"
-        type="text/css"
-      />
-      <link
-        href="/assets/admin/css/jquery.multiselect.css"
-        rel="stylesheet"
-        type="text/css"
-      />
 
       <link
         href="/assets/admin/css/custom.css"

@@ -4,6 +4,7 @@ const nextConfig = {
   swcMinify: true,
   env: {
     IMAGE_URL: '/',
+    API_URL: '/',
   }
 }
 

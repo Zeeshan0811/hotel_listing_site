@@ -3,6 +3,8 @@ import HeadFiles from "../components/HeadFiles";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
+import { verify } from "jsonwebtoken";
+
 
 export default function Document() {
   return (

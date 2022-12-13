@@ -1,0 +1,65 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "logs\\.3d4dce592c0c904e99a5535347f2ee1041139162-audit.json",
+    "files": [
+        {
+            "date": 1668582698226,
+            "name": "logs\\application-2022-11-16.log",
+            "hash": "46212be2e2e54cff38d25f36c4c41f5ebb351c18f36c87d6ac3839770bf64e3d"
+        },
+        {
+            "date": 1668674008339,
+            "name": "logs\\application-2022-11-17.log",
+            "hash": "04028d9c85d61332a0e1a2f1421ef55d169c914893752b2dc419abd63aacafbe"
+        },
+        {
+            "date": 1668923094321,
+            "name": "logs\\application-2022-11-20.log",
+            "hash": "28bc4f64f7a879ef7ae0cb5f8aa5b7b153b37ef12885b8827106b2cb60a9fa00"
+        },
+        {
+            "date": 1669007949031,
+            "name": "logs\\application-2022-11-21.log",
+            "hash": "2c46709dafe3e9b1b537b3b331b300f93d1b93c7166c679f1e3fde367c2ab967"
+        },
+        {
+            "date": 1669535406615,
+            "name": "logs\\application-2022-11-27.log",
+            "hash": "3ce87dcdcd3f818b9147c6de88d713e21a4365871bef8735d676a4935ab467a7"
+        },
+        {
+            "date": 1669789032863,
+            "name": "logs\\application-2022-11-30.log",
+            "hash": "065c7841e5be574a386ee9833a03c4cf36f4df643b1d1c6e0e25826e7f80d9b4"
+        },
+        {
+            "date": 1670138840274,
+            "name": "logs\\application-2022-12-04.log",
+            "hash": "02fe092c7df3861606d41d0cdde21c55f0fc035dabe45b825aec7b734859a7a7"
+        },
+        {
+            "date": 1670327745547,
+            "name": "logs\\application-2022-12-06.log",
+            "hash": "b74a1b6daa2117aae0d0f274c9ae826466ae4d63ac8485577a4bbc66f36265b4"
+        },
+        {
+            "date": 1670393390720,
+            "name": "logs\\application-2022-12-07.log",
+            "hash": "39203e99a413c35b364614013b2e63b6d62ecd853010cca0e40c0e04cdf06a2d"
+        },
+        {
+            "date": 1670479748663,
+            "name": "logs\\application-2022-12-08.log",
+            "hash": "9389154e46fc0265e1003c5c28a379131591476e54a20efb2a92cb91e586d299"
+        },
+        {
+            "date": 1670824569357,
+            "name": "logs\\application-2022-12-12.log",
+            "hash": "19dde55f9277ae8d9ad75850b30d10ce3f0001a572a57d553c083727c1f0bfa9"
+        }
+    ],
+    "hashType": "sha256"
+}

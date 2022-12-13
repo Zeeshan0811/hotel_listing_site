@@ -25,6 +25,9 @@ export default function SubHeader({ title }) {
               <a href="/" className="breadcrumb-item">
                 <i className="icon-home2 mr-2"></i> Dashboard
               </a>
+              {/* <a href="/" className="breadcrumb-item">
+                Dashboard
+              </a> */}
               <span className="breadcrumb-item active">{title}</span>
             </div>
 

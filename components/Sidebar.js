@@ -33,18 +33,35 @@ export default function Sidebar() {
               </a>
               <ul className="nav nav-group-sub" data-submenu-title="Starter kit">
                 <li className="nav-item">
-                  <a href="/admin/asset/add" className="nav-link">
+                  <a href="/admin/category/add" className="nav-link">
                     Add New
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="/admin/asset/list" className="nav-link">
+                  <a href="/admin/category/list" className="nav-link">
                     Category List
                   </a>
                 </li>
               </ul>
             </li>
             <li className="nav-item nav-item-submenu">
+              <a href="#" className="nav-link">
+                <i className="icon-stack"></i> <span>Services</span>
+              </a>
+              <ul className="nav nav-group-sub" data-submenu-title="Starter kit">
+                <li className="nav-item">
+                  <a href="/admin/services/add" className="nav-link">
+                    Add New
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="/admin/services/list" className="nav-link">
+                    Services List
+                  </a>
+                </li>
+              </ul>
+            </li>
+            {/* <li className="nav-item nav-item-submenu">
               <a href="#" className="nav-link">
                 <i className="icon-stack"></i> <span>Vendor</span>
               </a>
@@ -60,7 +77,7 @@ export default function Sidebar() {
                   </a>
                 </li>
               </ul>
-            </li>
+            </li> */}
             <li className="nav-item nav-item-submenu">
               <a href="#" className="nav-link">
                 <i className="icon-stack"></i> <span>Hotel</span>
@@ -77,6 +94,26 @@ export default function Sidebar() {
                 <li className="nav-item">
                   <a href="/admin/hotel/list" className="nav-link">
                     Hotel List
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li className="nav-item nav-item-submenu">
+              <a href="#" className="nav-link">
+                <i className="icon-stack"></i> <span>Room</span>
+              </a>
+              <ul
+                className="nav nav-group-sub"
+                data-submenu-title="Starter kit"
+              >
+                <li className="nav-item">
+                  <a href="/admin/room/add" className="nav-link">
+                    Add New
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="/admin/room/list" className="nav-link">
+                    Room List
                   </a>
                 </li>
               </ul>

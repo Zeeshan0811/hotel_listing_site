@@ -1,51 +1,54 @@
-import React from 'react'
+import { useState } from 'react'
 import SubHeader from "../../../components/SubHeader";
+import InputField from "../../../components/form/InputField";
 
 export default function user() {
+    const [state, setState] = useState({
+        firstName: "",
+        lastName: "",
+        phone: "",
+        email: "",
+        address: "",
+        city: "",
+        country: "",
+    });
+
+
+    function handleChange(e) {
+        setState({ ...state, [e.target.name]: e.target.value });
+    }
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+
+        let formData = new FormData();
+        for (let [key, value] of Object.entries(state)) {
+            formData.append(key, value);
+        }
+
+        console.log(formData);
+    }
     return (
         <>
             <SubHeader title="User Settings" />
 
-            <div class="content">
-                <div class="row justify-content-md-center">
-                    <div class="col-md-10">
-                        <div class="card">
-                            <div class="card-body">
-                                <form action="<?php echo base_url('admin/setting/user'); ?>" enctype="multipart/form-data" method="POST">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>First Name:</label>
-                                                <input type="text" class="form-control" name="firstName" value="" required />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Last Name:</label>
-                                                <input type="text" class="form-control" name="firstName" value="" required />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Phone:</label>
-                                                <input type="text" class="form-control" name="phone" value="" required />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Email:</label>
-                                                <input type="text" class="form-control" name="email" value="" required />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Address :</label>
-                                                <textarea name="address" rows="5" cols="5" class="form-control" placeholder="Enter your address here"></textarea>
-                                            </div>
-                                        </div>
+            <div className="content">
+                <div className="row justify-content-md-center">
+                    <div className="col-md-10">
+                        <div className="card">
+                            <div className="card-body">
+                                <form onSubmit={handleSubmit}>
+                                    <div className="row">
+                                        <InputField column="col-md-6" type="text" label="First Name" name="firstName" value={state.firstName} onchange={handleChange} />
+                                        <InputField column="col-md-6" type="text" label="Last Name" name="lastName" value={state.lastName} onchange={handleChange} />
+                                        <InputField column="col-md-6" type="text" label="Phone" name="phone" value={state.phone} onchange={handleChange} />
+                                        <InputField column="col-md-6" type="text" label="Email" name="email" value={state.email} onchange={handleChange} />
+                                        <InputField column="col-md-6" type="text" label="Address" name="address" value={state.address} onchange={handleChange} />
+                                        <InputField column="col-md-6" type="text" label="City" name="city" value={state.city} onchange={handleChange} />
+                                        <InputField column="col-md-6" type="text" label="Country" name="country" value={state.country} onchange={handleChange} />
                                     </div>
-                                    <div class="text-right">
-                                        <button type="submit" class="btn btn-primary">Submit <i class="icon-paperplane ml-2"></i></button>
+                                    <div className="text-right">
+                                        <button type="submit" className="btn btn-primary">Submit <i className="icon-paperplane ml-2"></i></button>
                                     </div>
                                 </form>
                             </div>

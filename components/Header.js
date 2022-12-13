@@ -1,6 +1,25 @@
+import axios from "axios";
 import Image from "next/image";
 
+import { useRouter } from "next/router";
+import Link from "next/link";
+
 export default function Header() {
+
+    const handleGetuser = async (e) => {
+        e.preventDefault();
+        console.log('Account Settings');
+        const user = await axios.get('api/user');
+        console.log(user);
+    }
+
+    const handleLogout = async (e) => {
+        e.stopPropagation();
+        console.log("Log Out Now ");
+    }
+
+
+
     return (
         <div className="navbar navbar-expand-md navbar-dark">
             <div className="navbar-brand">
@@ -10,7 +29,7 @@ export default function Header() {
                         layout='fill'
                         width='90px'
                         height="100px"
-                        loading="lazy" />
+                        loa ding="lazy" />
                 </a>
             </div>
 
@@ -42,18 +61,20 @@ export default function Header() {
                         </a>
 
                         <div className="dropdown-menu dropdown-menu-right">
-                            <a href="" className="dropdown-item">
+                            <a onClick={(e) => handleGetuser(e)} className="dropdown-item">
                                 <i className="icon-cog5"></i>
                                 Account settings
                             </a>
-                            <a href="" className="dropdown-item">
-                                <i className="icon-switch2"></i>
-                                Logout
-                            </a>
+                            <Link href="#" >
+                                <a className="dropdown-item" onClick={(e) => { e.preventDefault(); console.log('asdsad'); }}>
+                                    <i className="icon-switch2"></i>
+                                    Logout
+                                </a>
+                            </Link>
                         </div>
                     </li>
                 </ul>
             </div>
-        </div>
+        </div >
     );
 }

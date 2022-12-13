@@ -5,11 +5,11 @@ export default function InputField({ column, type, label, name, value, onchange 
 
     return (
         <div className={`${column} form-group`}>
-            <label>{`${label} :`}</label>
+            <label htmlFor={name}>{`${label} :`}</label>
             {(type == 'textarea') ? (
-                <textarea name={name} value={value} className="form-control" onChange={onchange} />
+                <textarea name={name} id={name} value={value} className="form-control" onChange={onchange} />
             ) : (
-                <input name={name} type={type} value={value} className="form-control" onChange={onchange} />
+                <input name={name} id={name} type={type} value={value} className="form-control" onChange={onchange} />
             )}
         </div>
     )

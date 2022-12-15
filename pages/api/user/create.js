@@ -1,12 +1,9 @@
 import User from '../../../database/models/User';
 
-export default async function (req, res) {
+export default async (req, res) => {
     const { firstName, lastName, type, email, phone, address, address_line_2, city, country, zip } = req.body;
-
-    console.log(req.body);
-
     await User.create({
-        uri,
+        // uri,
         type,
         firstName,
         lastName,
@@ -17,6 +14,7 @@ export default async function (req, res) {
         city,
         country,
         zip
+
     }).then(function (users) {
         if (users) {
             res.send(users);
@@ -25,9 +23,3 @@ export default async function (req, res) {
         }
     });
 }
-
-
-
-
-// res.status(200).json({ message: "Success!" });
-// res.json({ message: "Invalid Credentials" });

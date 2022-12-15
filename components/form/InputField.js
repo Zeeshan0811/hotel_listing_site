@@ -1,8 +1,5 @@
 
-
 export default function InputField({ column, type, label, name, value, onchange }) {
-
-
     return (
         <div className={`${column} form-group`}>
             <label htmlFor={name}>{`${label} :`}</label>

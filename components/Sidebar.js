@@ -120,6 +120,26 @@ export default function Sidebar() {
             </li>
             <li className="nav-item nav-item-submenu">
               <a href="#" className="nav-link">
+                <i className="icon-stack"></i> <span>User</span>
+              </a>
+              <ul
+                className="nav nav-group-sub"
+                data-submenu-title="Starter kit"
+              >
+                <li className="nav-item">
+                  <a href="/admin/user/add" className="nav-link">
+                    Add New
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="/admin/user/list" className="nav-link">
+                    User List
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li className="nav-item nav-item-submenu">
+              <a href="#" className="nav-link">
                 <i className="icon-cog3"></i> <span>Settings</span>
               </a>
               <ul

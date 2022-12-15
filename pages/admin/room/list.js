@@ -2,6 +2,20 @@ import { useState } from 'react';
 import SubHeader from "../../../components/SubHeader";
 
 export default function list() {
+    let get_list = async () => {
+        try {
+            const result = await axios.get('https://jsonplaceholder.typicode.com/todos/1');
+            const data = result.data;
+            return {
+                props: {
+                    data: data
+                }
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <>
             <SubHeader title="Company Settings" />

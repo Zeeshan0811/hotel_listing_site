@@ -1,30 +1,40 @@
 import Hotel from '../../../database/models/Hotel';
 import logger from '../../../services/logger'
 
-export default async function handler(req, res) {
+export default async function Handler(req, res) {
     const { name, phone, phone_2, email, address, address_line_2, city, country, zip, website, about, important_notice } = req.body;
 
     try {
+        console.log(req.method);
         // Get Hotel List
         if (req.method == 'GET') {
             const hotels = await Hotel.findAll({
                 attributes: ['hotel_id', 'name', 'email', 'phone', 'website'],
                 limit: 100,
             });
-            res.status(200).json({ hotels });
+            res.status(200).json(hotels);
         }
 
         // Creating New hotel
         if (req.method == 'POST') {
-            await Hotel.create({
-                name, phone, phone_2, email, address, address_line_2, city, country, zip, website, about, important_notice
-            }).then(function (hotel) {
-                if (hotel) {
-                    res.send(hotel);
-                } else {
-                    res.status(400).send('Error in insert new record');
-                }
-            });
+            try {
+                await Hotel.create({
+                    name, phone, phone_2, email, address, address_line_2, city, country, zip, website, about, important_notice
+                }).then(function (hotel) {
+                    if (hotel) {
+                        res.send(hotel);
+                        // res.send(hotel.toJSON());
+                    } else {
+                        res.status(400).send('Error in insert new record');
+                    }
+                });
+            } catch (e) {
+                logger.error(e.stack);
+                res.status(400).json({
+                    error_code: 'post_hotel',
+                    message: e.message
+                });
+            }
         }
 
         // Updating New Hotel

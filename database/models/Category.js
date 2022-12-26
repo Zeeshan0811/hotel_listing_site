@@ -5,7 +5,7 @@ const initCategory = (sequelize, Types) => {
     class Category extends Model { }
     Category.init(
         {
-            cat_id: { type: DataTypes.INTEGER, primaryKey: true },
+            cat_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
             cat_title: Types.STRING,
             cat_note: Types.STRING,
         },

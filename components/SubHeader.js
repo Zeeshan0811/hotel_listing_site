@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 export default function SubHeader({ title }) {
   const router = useRouter();
@@ -22,9 +23,11 @@ export default function SubHeader({ title }) {
         <div className="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
           <div className="d-flex">
             <div className="breadcrumb">
-              <a href="/" className="breadcrumb-item">
-                <i className="icon-home2 mr-2"></i> Dashboard
-              </a>
+              <Link href="/">
+                <a className="breadcrumb-item">
+                  <i className="icon-home2 mr-2"></i> Dashboard
+                </a>
+              </Link>
               {/* <a href="/" className="breadcrumb-item">
                 Dashboard
               </a> */}

@@ -1,19 +1,19 @@
-import { useState } from 'react';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 import SubHeader from "../../../components/SubHeader";
 
-export async function getStaticProps(context) {
-    const users = await fetch("http://localhost:3000/api/user/list")
-        .then(response => response.json())
-        .catch(error => console.log('error', error));
 
-
-    return {
-        props: { users }
+const List = () => {
+    const [users, setUsers] = useState([]);
+    const api_url = `${process.env.API_URL}` + 'user/list';
+    const getUsers = async () => {
+        let response = await axios.get(api_url);
+        setUsers(response.data);
     }
-};
 
-
-export default function list({ users }) {
+    useEffect(() => {
+        getUsers()
+    }, [])
     return (
         <>
             <SubHeader title="User List" />
@@ -33,15 +33,17 @@ export default function list({ users }) {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {users.users.map((user) => (
-                                            <tr key={user.userId}>
-                                                <td>{user.userId}</td>
-                                                <td>{user.firstName + ' ' + user.lastName}</td>
-                                                <td>{user.phone}</td>
-                                                <td>{user.email}</td>
-                                                <td>{user.website}</td>
-                                            </tr>
-                                        ))}
+                                        {users && users.map((user, index) => {
+                                            return (
+                                                <tr key={user.userId}>
+                                                    <td>{index + 1}</td>
+                                                    <td>{user.firstName + ' ' + user.lastName}</td>
+                                                    <td>{user.phone}</td>
+                                                    <td>{user.email}</td>
+                                                    <td>{user.website}</td>
+                                                </tr>
+                                            )
+                                        })}
                                     </tbody>
                                 </table>
                             </div>
@@ -53,3 +55,5 @@ export default function list({ users }) {
 
     )
 }
+
+export default List

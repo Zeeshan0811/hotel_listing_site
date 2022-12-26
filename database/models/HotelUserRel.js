@@ -7,7 +7,7 @@ const initHotelUserRel = (sequelize, Types) => {
     class HotelUserRel extends Model { }
     HotelUserRel.init(
         {
-            rel_id: { type: DataTypes.INTEGER, primaryKey: true },
+            rel_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
             rel_type: Types.INTEGER,
             hotel_id: {
                 type: DataTypes.INTEGER, references: {

@@ -3,7 +3,7 @@ import { serialize } from "cookie";
 
 const secret = process.env.SECRET_AUTH_KEY;
 
-export default async function (req, res) {
+export default async function Handler(req, res) {
     const { username, password } = req.body;
 
     // console.log(secret);

@@ -1,13 +1,13 @@
 import Allsetup from '../../../database/models/Allsetup';
 import logger from '../../../services/logger'
 
-export default async function handler(req, res) {
+export default async function Handler(req, res) {
     try {
         const allsetup = await Allsetup.findAll({
             attributes: ['type', 'title', 'icon'],
             limit: 100
         });
-        res.status(200).json({ allsetup });
+        res.status(200).json(allsetup);
     } catch (e) {
         logger.error(e.stack);
         res.status(400).json({

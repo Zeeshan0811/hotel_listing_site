@@ -1,0 +1,11 @@
+2022-12-20 16:33:27 [development] error: TypeError: options.attributes.map is not a function
+    at new Model (F:\Projects\Javascript\hotel_management\node_modules\sequelize\lib\model.js:101:47)
+    at new Hotel (webpack-internal:///(api)/./database/models/Hotel.js:13:5)
+    at Function.build (F:\Projects\Javascript\hotel_management\node_modules\sequelize\lib\model.js:1326:12)
+    at Function.create (F:\Projects\Javascript\hotel_management\node_modules\sequelize\lib\model.js:1344:23)
+    at handler (webpack-internal:///(api)/./pages/api/hotel/index.js:35:86)
+    at Object.apiResolver (F:\Projects\Javascript\hotel_management\node_modules\next\dist\server\api-utils\node.js:179:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async DevServer.runApi (F:\Projects\Javascript\hotel_management\node_modules\next\dist\server\next-server.js:381:9)
+    at async Object.fn (F:\Projects\Javascript\hotel_management\node_modules\next\dist\server\base-server.js:500:37)

@@ -1,7 +1,7 @@
 import Room from '../../../database/models/Room';
 
 
-export default async function handler(req, res) {
+export default async function Handler(req, res) {
     const { slug } = req.query
     const hotel_uri = slug[0];
     const request_type = slug[1];
@@ -18,7 +18,7 @@ export default async function handler(req, res) {
         if (rooms === null) {
             res.status(404).json({ "message": "No Room Found!" });
         } else {
-            res.status(200).json({ rooms });
+            res.status(200).json(rooms);
         }
     }
 
@@ -35,7 +35,7 @@ export default async function handler(req, res) {
         if (room === null) {
             res.status(404).json({ "message": "No Room Found!" });
         } else {
-            res.status(200).json({ room });
+            res.status(200).json(room);
         }
     }
 }

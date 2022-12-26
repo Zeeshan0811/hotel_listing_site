@@ -2,7 +2,7 @@ import { useState } from 'react';
 import SubHeader from "../../../components/SubHeader";
 import InputField from "../../../components/form/InputField";
 
-export default function company() {
+export default function Company() {
   const [state, setState] = useState({
     company: "",
     phone: "",

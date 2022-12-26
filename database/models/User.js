@@ -5,7 +5,7 @@ const initUser = (sequelize, Types) => {
     class User extends Model { }
     User.init(
         {
-            userId: { type: DataTypes.INTEGER, primaryKey: true },
+            userId: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
             type: Types.INTEGER,
             firstName: Types.STRING,
             lastName: Types.STRING,

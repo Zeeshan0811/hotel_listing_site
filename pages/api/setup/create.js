@@ -1,6 +1,6 @@
 import Allsetup from '../../../database/models/Allsetup';
 
-export default async function (req, res) {
+export default async function Handler(req, res) {
     const { type, title } = req.body;
 
     console.log(req.body);
@@ -9,7 +9,7 @@ export default async function (req, res) {
         res.status(405).send({ message: 'Only POST requests allowed' })
         return
     }
-    
+
     await Allsetup.create({
         type,
         title

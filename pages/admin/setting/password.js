@@ -2,7 +2,7 @@ import { useState } from 'react';
 import SubHeader from "../../../components/SubHeader";
 import InputField from "../../../components/form/InputField";
 
-export default function password(props) {
+export default function Password(props) {
   const [state, setState] = useState({
     old_password: "",
     new_password: "",

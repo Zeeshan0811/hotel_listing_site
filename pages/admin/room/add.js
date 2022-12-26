@@ -2,7 +2,7 @@ import { useState } from 'react';
 import SubHeader from "../../../components/SubHeader";
 import InputField from "../../../components/form/InputField";
 
-export default function add() {
+export default function Add() {
     const [state, setState] = useState({
         title: "",
         sub_title: "",

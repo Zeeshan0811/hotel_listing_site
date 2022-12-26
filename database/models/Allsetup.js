@@ -6,7 +6,7 @@ const initAllsetup = (sequelize, Types) => {
     class Allsetup extends Model { }
     Allsetup.init(
         {
-            unitId: { type: DataTypes.INTEGER, primaryKey: true },
+            unitId: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
             type: Types.STRING,
             title: Types.STRING,
             icon: Types.STRING,

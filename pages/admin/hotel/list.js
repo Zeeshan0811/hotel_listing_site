@@ -1,16 +1,31 @@
-import { useState } from 'react';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 import SubHeader from "../../../components/SubHeader";
 
-export async function getStaticProps(context) {
-    const res = await fetch('http://localhost:3000/api/hotel');
-    const hotels = await res.json();
+// export async function getStaticProps(context) {
+//     const api_url = `${process.env.API_URL}` + 'hotel';
+//     const res = await fetch(api_url);
+//     const hotels = await res.json();
 
-    return {
-        props: { hotels }
-    };
-}
+//     return {
+//         props: { hotels }
+//     };
+// }
 
-export default function list({ hotels }) {
+
+// export default function List() {
+const List = () => {
+    const [hotels, setHotels] = useState([]);
+    const api_url = `${process.env.API_URL}` + 'hotel';
+    const getHotels = async () => {
+        let response = await axios.get(api_url);
+        setHotels(response.data);
+    }
+
+    useEffect(() => {
+        getHotels()
+    }, [])
+
     // console.log(hotels.hotels[0].name);
     return (
         <>
@@ -32,18 +47,18 @@ export default function list({ hotels }) {
                                         </tr>
                                     </thead>
                                     <tbody>
-
-                                        {/* {hotels.map((hotel) => <h1>post</h1>)} */}
-                                        {hotels.hotels.map((hotel) => (
-                                            <tr key={hotel.hotel_id}>
-                                                <td>{hotel.hotel_id}</td>
-                                                <td>{hotel.name}</td>
-                                                <td>{hotel.phone}</td>
-                                                <td>{hotel.email}</td>
-                                                <td>{hotel.website}</td>
-                                                <td></td>
-                                            </tr>
-                                        ))}
+                                        {hotels && hotels.map((hotel, index) => {
+                                            return (
+                                                <tr key={hotel.hotel_id}>
+                                                    <td>{index + 1}</td>
+                                                    <td>{hotel.name}</td>
+                                                    <td>{hotel.phone}</td>
+                                                    <td>{hotel.email}</td>
+                                                    <td>{hotel.website}</td>
+                                                    <td></td>
+                                                </tr>
+                                            )
+                                        })}
                                     </tbody>
                                 </table>
                             </div>
@@ -55,3 +70,5 @@ export default function list({ hotels }) {
 
     )
 }
+
+export default List

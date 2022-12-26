@@ -1,6 +1,5 @@
 import axios from "axios";
 import Image from "next/image";
-
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -18,19 +17,20 @@ export default function Header() {
         console.log("Log Out Now ");
     }
 
-
+    const logo = `/upload/logo/logo.png`;
 
     return (
         <div className="navbar navbar-expand-md navbar-dark">
             <div className="navbar-brand">
-                <a href="/" className="d-inline-block">
-                    <img src={`${process.env.IMAGE_URL}upload/logo/logo.png`}
-                        alt=""
-                        layout='fill'
-                        width='90px'
-                        height="100px"
-                        loa ding="lazy" />
-                </a>
+                <Link href="/">
+                    <a className="d-inline-block">
+                        <img src={logo} alt=""
+                            // layout='fill'
+                            width={'90px'}
+                            height={'100px'}
+                            loading="lazy" />
+                    </a>
+                </Link>
             </div>
 
             <div className="d-md-none">
@@ -45,9 +45,11 @@ export default function Header() {
             <div className="collapse navbar-collapse" id="navbar-mobile">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <a href="#" className="navbar-nav-link sidebar-control sidebar-main-toggle d-none d-md-block">
-                            <i className="icon-paragraph-justify3"></i>
-                        </a>
+                        <Link href="#">
+                            <a className="navbar-nav-link sidebar-control sidebar-main-toggle d-none d-md-block">
+                                <i className="icon-paragraph-justify3"></i>
+                            </a>
+                        </Link>
                     </li>
                 </ul>
 
@@ -55,16 +57,20 @@ export default function Header() {
 
                 <ul className="navbar-nav">
                     <li className="nav-item dropdown dropdown-user">
-                        <a href="#" className="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
-                            <Image src="" className="rounded-circle mr-2" height="34" width="34" alt=""></Image>
-                            <span>Admin</span>
-                        </a>
-
-                        <div className="dropdown-menu dropdown-menu-right">
-                            <a onClick={(e) => handleGetuser(e)} className="dropdown-item">
-                                <i className="icon-cog5"></i>
-                                Account settings
+                        <Link href="#">
+                            <a className="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
+                                <Image src="" className="rounded-circle mr-2" height="34" width="34" alt=""></Image>
+                                <span>Admin</span>
                             </a>
+                        </Link>
+
+                        <div className="dropdown-menu dropdown-menu-right">.
+                            <Link href="#" >
+                                <a onClick={(e) => handleGetuser(e)} className="dropdown-item">
+                                    <i className="icon-cog5"></i>
+                                    Account settings
+                                </a>
+                            </Link>
                             <Link href="#" >
                                 <a className="dropdown-item" onClick={(e) => { e.preventDefault(); console.log('asdsad'); }}>
                                     <i className="icon-switch2"></i>

@@ -1,7 +1,7 @@
 import Room from '../../../database/models/Room';
 import logger from '../../../services/logger'
 
-export default async function handler(req, res) {
+export default async function Handler(req, res) {
     try {
         const rooms = await Room.findOne({
             exclude: ['created_by', 'updated_by', 'created_at', 'updated_at'],
@@ -11,7 +11,7 @@ export default async function handler(req, res) {
         if (rooms === null) {
             res.status(404).json({ "message": "Rooms are empty!" });
         } else {
-            res.status(200).json({ rooms });
+            res.status(200).json(rooms);
         }
     } catch (e) {
         logger.error(e.stack);

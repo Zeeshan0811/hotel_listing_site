@@ -1,6 +1,6 @@
 import Room from '../../../database/models/Room';
 
-export default async function (req, res) {
+export default async function Handler(req, res) {
     const { hotel_id, title, short_descritpion, description, facilities, views, breakfast, services, guests, beds, area } = req.body;
 
     // Get All The Rooms
@@ -11,7 +11,7 @@ export default async function (req, res) {
             },
             limit: 100,
         });
-        res.status(200).json({ room });
+        res.status(200).json(room);
     }
 
 

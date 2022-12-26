@@ -1,7 +1,7 @@
 import User from '../../../database/models/User';
 import logger from '../../../services/logger';
 
-export default async function handler(req, res) {
+export default async function Handler(req, res) {
     try {
         const users = await User.findAll({
             where: { type: 2 },
@@ -10,7 +10,7 @@ export default async function handler(req, res) {
             },
             limit: 100,
         });
-        res.status(200).json({ users });
+        res.status(200).json(users);
     } catch (e) {
         logger.error(e.stack);
         res.status(400).json({

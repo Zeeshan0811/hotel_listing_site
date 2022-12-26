@@ -5,7 +5,7 @@ const initRoom = (sequelize, Types) => {
     class Room extends Model { }
     Room.init(
         {
-            room_id: { type: DataTypes.INTEGER, primaryKey: true },
+            room_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
             uri: Types.STRING,
             title: Types.STRING,
             short_descritpion: Types.STRING,
@@ -16,8 +16,8 @@ const initRoom = (sequelize, Types) => {
             services: Types.STRING,
             guests: Types.STRING,
             beds: Types.STRING,
-            created_by: Types.STRING,
-            Updated_by: Types.STRING,
+            created_by: Types.INTEGER,
+            Updated_by: Types.INTEGER,
         },
         {
             sequelize,

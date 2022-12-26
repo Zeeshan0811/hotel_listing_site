@@ -2,7 +2,7 @@ import HotelUserRel from '../../../database/models/HotelUserRel';
 import User from '../../../database/models/User';
 import Hotel from '../../../database/models/Hotel';
 
-export default async function (req, res) {
+export default async function Handler(req, res) {
     const { rel_type, hotel_id, user_id } = req.body;
     let rel = null
 

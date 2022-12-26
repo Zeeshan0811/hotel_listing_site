@@ -1,4 +1,4 @@
-export default async function (req, res) {
+export default async function Handler(req, res) {
     const { cookies } = req;
 
     const jwt = cookies.OursiteJWT;

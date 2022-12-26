@@ -5,7 +5,7 @@ import Room from '../../../database/models/Room';
 import User from '../../../database/models/User';
 
 
-export default async function handler(req, res) {
+export default async function Handler(req, res) {
     const { slug } = req.query
     const type = slug[0];
     const id = slug[1];

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import SubHeader from "../../../components/SubHeader";
 
-export default function list() {
+export default function List() {
     return (
         <>
             <SubHeader title="Services List" />
@@ -10,7 +10,7 @@ export default function list() {
                     <div className="col-md-10">
                         <div className="card">
                             <div className="card-body">
-                                <table class="table table-hover">
+                                <table className="table table-hover">
                                     <thead>
                                         <tr>
                                             <th>SL.</th>

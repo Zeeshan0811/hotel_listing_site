@@ -3,7 +3,8 @@ import axios from "axios"
 import SubHeader from "../../../components/SubHeader";
 import InputField from "../../../components/form/InputField";
 
-export default function user() {
+export default function User() {
+    const api_url = `${process.env.API_URL}` + 'user/create';
     const [state, setState] = useState({
         firstName: "",
         lastName: "",
@@ -25,7 +26,7 @@ export default function user() {
 
         let response = await axios({
             method: "POST",
-            url: `http://localhost:3000/api/user/create`,
+            url: api_url,
             data: JSON.stringify(state),
             headers: {
                 'Content-Type': "application/json"

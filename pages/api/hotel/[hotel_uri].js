@@ -1,20 +1,28 @@
 import Hotel from '../../../database/models/Hotel';
+import Image from '../../../database/models/Image';
 import logger from '../../../services/logger'
 
-export default async function handler(req, res) {
+export default async function Handler(req, res) {
     const { query: { hotel_uri } } = req;
     try {
         const hotel = await Hotel.findOne({
             where: { hotel_uri: hotel_uri },
             attributes: {
                 exclude: ['created_by', 'updated_by', 'created_at', 'updated_at']
-            },
+            }, include: [
+                {
+                    model: Image,
+                    attributes: {
+                        exclude: ['created_by', 'updated_by', 'created_at', 'updated_at']
+                    }
+                }
+            ]
         });
 
         if (hotel === null) {
             res.status(404).json({ "message": "Hotel is not found!" });
         } else {
-            res.status(200).json({ hotel });
+            res.status(200).json(hotel);
         }
     } catch (e) {
         logger.error(e.stack);

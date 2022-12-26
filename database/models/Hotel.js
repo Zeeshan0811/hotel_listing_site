@@ -1,11 +1,13 @@
 import { Model, DataTypes } from 'sequelize';
 import connection from '../connection';
+import Image from './Image';
 
 const initHotel = (sequelize, Types) => {
     class Hotel extends Model { }
     Hotel.init(
         {
-            hotel_id: { type: DataTypes.INTEGER, primaryKey: true },
+            hotel_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+            hotel_uri: Types.STRING,
             name: Types.STRING,
             email: Types.STRING,
             phone: Types.STRING,
@@ -18,7 +20,7 @@ const initHotel = (sequelize, Types) => {
             address_line_2: Types.STRING,
             city: Types.STRING,
             country: Types.STRING,
-            zip: Types.STRING,
+            zip: Types.STRING
         },
         {
             sequelize,
@@ -28,6 +30,8 @@ const initHotel = (sequelize, Types) => {
             updatedAt: 'updated_at',
         }
     );
+
+    Hotel.hasMany(Image, { foreignKey: 'reference_id' })
     return Hotel;
 };
 

@@ -1,6 +1,6 @@
 import User from '../../../database/models/User';
 
-export default async (req, res) => {
+export default async function Handler(req, res) {
     const { firstName, lastName, type, email, phone, address, address_line_2, city, country, zip } = req.body;
     await User.create({
         // uri,

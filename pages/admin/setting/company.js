@@ -11,7 +11,7 @@ export default function Company() {
     email: "",
     website: "",
     email: "",
-    address: ""
+    address: "",
   });
 
 

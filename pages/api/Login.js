@@ -7,5 +7,5 @@ export default async function Handler(req, res) {
         return res.json({ message: "Invalid token!" });
     }
 
-    return res.json({ data: "Top secret data!" });
+    return res.json({ data: "Top secret data!", jwt: jwt });
 }

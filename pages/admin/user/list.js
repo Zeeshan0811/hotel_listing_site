@@ -29,7 +29,7 @@ const List = () => {
                                             <th>Name</th>
                                             <th>Phone</th>
                                             <th>Email</th>
-                                            <th>Action</th>
+                                            <th>Website</th>
                                         </tr>
                                     </thead>
                                     <tbody>

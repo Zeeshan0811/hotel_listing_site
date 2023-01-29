@@ -23,14 +23,9 @@ export default function SubHeader({ title }) {
         <div className="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
           <div className="d-flex">
             <div className="breadcrumb">
-              <Link href="/">
-                <a className="breadcrumb-item">
-                  <i className="icon-home2 mr-2"></i> Dashboard
-                </a>
+              <Link href="/" className="breadcrumb-item">
+                <i className="icon-home2 mr-2"></i> Dashboard
               </Link>
-              {/* <a href="/" className="breadcrumb-item">
-                Dashboard
-              </a> */}
               <span className="breadcrumb-item active">{title}</span>
             </div>
 

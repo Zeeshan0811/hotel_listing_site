@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import SubHeader from "../../../components/SubHeader";
+import Action from "../../../components/Action";
 
 // export async function getStaticProps(context) {
 //     const api_url = `${process.env.API_URL}` + 'hotel';
@@ -16,15 +17,25 @@ import SubHeader from "../../../components/SubHeader";
 // export default function List() {
 const List = () => {
     const [hotels, setHotels] = useState([]);
+    const [isLoading, setIsLoading] = useState(false)
     const api_url = `${process.env.API_URL}` + 'hotel';
     const getHotels = async () => {
         let response = await axios.get(api_url);
         setHotels(response.data);
+        setIsLoading(false)
     }
 
     useEffect(() => {
+        setIsLoading(true);
         getHotels()
     }, [])
+
+    if (isLoading) {
+        return <p>Loading....</p>
+    }
+    if (!hotels) {
+        return <p>No List to show</p>
+    }
 
     // console.log(hotels.hotels[0].name);
     return (
@@ -55,7 +66,9 @@ const List = () => {
                                                     <td>{hotel.phone}</td>
                                                     <td>{hotel.email}</td>
                                                     <td>{hotel.website}</td>
-                                                    <td></td>
+                                                    <td>
+                                                        <Action index_key={hotel.hotel_id} edit_link={'/admin/hotel/edit/'} delete_link={'admin/hotel/delete/'} />
+                                                    </td>
                                                 </tr>
                                             )
                                         })}

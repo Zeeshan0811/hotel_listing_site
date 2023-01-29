@@ -7,7 +7,7 @@ export default function Add() {
         title: "",
         price: "",
         slug: "",
-        complementary: ""
+        complementary: "",
     });
 
     function handleChange(e) {

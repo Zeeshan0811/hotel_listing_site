@@ -3,12 +3,14 @@ import Allsetup from '../../../database/models/Allsetup';
 import Hotel from '../../../database/models/Hotel';
 import Room from '../../../database/models/Room';
 import User from '../../../database/models/User';
+import HotelUserRel from '../../../database/models/HotelUserRel';
 
 
 export default async function Handler(req, res) {
     const { slug } = req.query
     const type = slug[0];
     const id = slug[1];
+    const fk_id = slug[2];
     let row = null;
     let modal = null;
     let where_clue = null;
@@ -24,7 +26,6 @@ export default async function Handler(req, res) {
             modal = Allsetup;
             where_clue = { "unitId": id };
             break;
-
         case "hotel":
             modal = Hotel;
             where_clue = { "hotel_id": id };
@@ -36,6 +37,10 @@ export default async function Handler(req, res) {
         case "user":
             modal = User;
             where_clue = { "userId": id };
+            break;
+        case "rel_hotel_user":
+            modal = HotelUserRel;
+            where_clue = { "rel_id": id };
             break;
 
         default:

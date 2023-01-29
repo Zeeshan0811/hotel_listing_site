@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <div className="navbar navbar-expand-lg navbar-light">
@@ -17,9 +19,9 @@ export default function Footer() {
         <span className="navbar-text">&copy; {new Date().getFullYear()}</span>
         <ul className="navbar-nav ml-lg-auto">
           <li className="nav-item">
-            <a href="#" className="navbar-nav-link" target="_blank">
+            <Link href="#" className="navbar-nav-link" target="_blank">
               <i className="icon-lifebuoy mr-2"></i> Support
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

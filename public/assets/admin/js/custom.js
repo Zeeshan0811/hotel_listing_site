@@ -43,7 +43,7 @@ function swal_alert(type, title, text = "") {
         icon: type,
         timer: 3000,
         showConfirmButton: false,
-        buttons: false
+        // buttons: false
     });
 }
 
@@ -53,4 +53,18 @@ function noty_alert(type, text) {
         type: type
     }).show();
 }
+
+
+function token_config(method, api_url, data) {
+    let config = {
+        method: method,
+        url: api_url,
+        data: JSON.stringify(data),
+        headers: {
+            'Content-Type': "application/json"
+        }
+    }
+    return config;
+}
+
 

@@ -6,7 +6,7 @@ export default function Password(props) {
   const [state, setState] = useState({
     old_password: "",
     new_password: "",
-    repeat_password: ""
+    repeat_password: "",
   });
 
 

@@ -5,17 +5,13 @@ export default function Sidebar() {
     return (
         <div className="sidebar sidebar-dark sidebar-main sidebar-expand-md no-print">
             <div className="sidebar-mobile-toggler text-center">
-                <Link href="#">
-                    <a className="sidebar-mobile-main-toggle">
-                        <i className="icon-arrow-left8"></i>
-                    </a>
+                <Link href="#" className="sidebar-mobile-main-toggle">
+                    <i className="icon-arrow-left8"></i>
                 </Link>
                 Navigation
-                <Link href="#">
-                    <a className="sidebar-mobile-expand">
-                        <i className="icon-screen-full"></i>
-                        <i className="icon-screen-normal"></i>
-                    </a>
+                <Link href="#" className="sidebar-mobile-expand">
+                    <i className="icon-screen-full"></i>
+                    <i className="icon-screen-normal"></i>
                 </Link>
             </div>
 
@@ -24,154 +20,114 @@ export default function Sidebar() {
                 <div className="card card-sidebar-mobile">
                     <ul className="nav nav-sidebar" data-nav-type="accordion">
                         <li className="nav-item">
-                            <Link href="/">
-                                <a className="nav-link">
-                                    <i className="icon-home4"></i>
-                                    <span>Dashboard</span>
-                                </a>
+                            <Link href="/" className="nav-link">
+                                <i className="icon-home4"></i>
+                                <span>Dashboard</span>
                             </Link>
                         </li>
                         <li className="nav-item nav-item-submenu">
-                            <Link href="#">
-                                <a className="nav-link">
-                                    <i className="icon-stack"></i> <span>Category</span>
-                                </a>
+                            <Link href="#" className="nav-link">
+                                <i className="icon-stack"></i> <span>Category</span>
                             </Link>
                             <ul className="nav nav-group-sub" data-submenu-title="Starter kit">
                                 <li className="nav-item">
-                                    <Link href="/admin/category/add">
-                                        <a className="nav-link">
-                                            Add New
-                                        </a>
+                                    <Link href="/admin/category/add" className="nav-link">
+                                        Add New
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link href="/admin/category/list">
-                                        <a className="nav-link">
-                                            Category List
-                                        </a>
+                                    <Link href="/admin/category/list" className="nav-link">
+                                        Category List
                                     </Link>
                                 </li>
                             </ul>
                         </li>
                         <li className="nav-item nav-item-submenu">
-                            <Link href="#">
-                                <a className="nav-link">
-                                    <i className="icon-stack"></i> <span>Services</span>
-                                </a>
+                            <Link href="#" className="nav-link">
+                                <i className="icon-stack"></i> <span>Services</span>
                             </Link>
                             <ul className="nav nav-group-sub" data-submenu-title="Starter kit">
                                 <li className="nav-item">
-                                    <Link href="/admin/services/add">
-                                        <a className="nav-link">
-                                            Add New
-                                        </a>
+                                    <Link href="/admin/services/add" className="nav-link">
+                                        Add New
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link href="/admin/services/list">
-                                        <a className="nav-link">
-                                            Services List
-                                        </a>
+                                    <Link href="/admin/services/list" className="nav-link">
+                                        Services List
                                     </Link>
                                 </li>
                             </ul>
                         </li>
                         <li className="nav-item nav-item-submenu">
-                            <Link href="#">
-                                <a className="nav-link">
-                                    <i className="icon-stack"></i> <span>Hotel</span>
-                                </a>
+                            <Link href="#" className="nav-link">
+                                <i className="icon-stack"></i> <span>Hotel</span>
                             </Link>
                             <ul className="nav nav-group-sub" data-submenu-title="Starter kit">
                                 <li className="nav-item">
-                                    <Link href="/admin/hotel/add">
-                                        <a className="nav-link">
-                                            Add New
-                                        </a>
+                                    <Link href="/admin/hotel/add" className="nav-link">
+                                        Add New
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link href="/admin/hotel/list">
-                                        <a className="nav-link">
-                                            Hotel List
-                                        </a>
+                                    <Link href="/admin/hotel/list" className="nav-link">
+                                        Hotel List
                                     </Link>
                                 </li>
                             </ul>
                         </li>
                         <li className="nav-item nav-item-submenu">
-                            <Link href="#">
-                                <a className="nav-link">
-                                    <i className="icon-stack"></i> <span>Room</span>
-                                </a>
+                            <Link href="#" className="nav-link">
+                                <i className="icon-stack"></i> <span>Room</span>
                             </Link>
                             <ul className="nav nav-group-sub" data-submenu-title="Starter kit">
                                 <li className="nav-item">
-                                    <Link href="/admin/room/add">
-                                        <a className="nav-link">
-                                            Add New
-                                        </a>
+                                    <Link href="/admin/room/add" className="nav-link">
+                                        Add New
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link href="/admin/room/list" >
-                                        <a className="nav-link">
-                                            Room List
-                                        </a>
+                                    <Link href="/admin/room/list" className="nav-link">
+                                        Room List
                                     </Link>
                                 </li>
                             </ul>
                         </li>
                         <li className="nav-item nav-item-submenu">
-                            <Link href="#" >
-                                <a className="nav-link">
-                                    <i className="icon-stack"></i> <span>User</span>
-                                </a>
+                            <Link href="#" className="nav-link">
+                                <i className="icon-stack"></i> <span>User</span>
                             </Link>
                             <ul className="nav nav-group-sub" data-submenu-title="Starter kit">
                                 <li className="nav-item">
-                                    <Link href="/admin/user/add">
-                                        <a className="nav-link">
-                                            Add New
-                                        </a>
+                                    <Link href="/admin/user/add" className="nav-link">
+                                        Add New
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link href="/admin/user/list">
-                                        <a className="nav-link">
-                                            User List
-                                        </a>
+                                    <Link href="/admin/user/list" className="nav-link">
+                                        User List
                                     </Link>
                                 </li>
                             </ul>
                         </li>
                         <li className="nav-item nav-item-submenu">
-                            <Link href="#">
-                                <a className="nav-link">
-                                    <i className="icon-cog3"></i> <span>Settings</span>
-                                </a>
+                            <Link href="#" className="nav-link">
+                                <i className="icon-cog3"></i> <span>Settings</span>
                             </Link>
                             <ul className="nav nav-group-sub" data-submenu-title="Starter kit">
                                 <li className="nav-item">
-                                    <Link href="/admin/setting/company">
-                                        <a className="nav-link" title="Company Setting">
-                                            Company Setting
-                                        </a>
+                                    <Link href="/admin/setting/company" className="nav-link" title="Company Setting">
+                                        Company Setting
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link href="/admin/setting/password">
-                                        <a className="nav-link" title="Change Password">
-                                            Change Password
-                                        </a>
+                                    <Link href="/admin/setting/password" className="nav-link" title="Change Password">
+                                        Change Password
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link href="/admin/setting/user">
-                                        <a className="nav-link" title="User Setting">
-                                            User Setting
-                                        </a>
+                                    <Link href="/admin/setting/user" className="nav-link" title="User Setting">
+                                        User Setting
                                     </Link>
                                 </li>
                             </ul>

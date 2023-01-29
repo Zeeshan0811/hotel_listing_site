@@ -42,3 +42,7 @@ export function middleware(request) {
 export const config = {
     matcher: '/admin/:path*',
 }
+
+// request.cookies.has('nextjs') // => true
+//   request.cookies.delete('nextjs')
+//   request.cookies.has('nextjs') // => false

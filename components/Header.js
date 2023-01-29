@@ -22,14 +22,12 @@ export default function Header() {
     return (
         <div className="navbar navbar-expand-md navbar-dark">
             <div className="navbar-brand">
-                <Link href="/">
-                    <a className="d-inline-block">
-                        <img src={logo} alt=""
-                            // layout='fill'
-                            width={'90px'}
-                            height={'100px'}
-                            loading="lazy" />
-                    </a>
+                <Link href="/" className="d-inline-block">
+                    <img src={logo} alt=""
+                        // layout='fill'
+                        width={'90px'}
+                        height={'100px'}
+                        loading="lazy" />
                 </Link>
             </div>
 
@@ -45,10 +43,8 @@ export default function Header() {
             <div className="collapse navbar-collapse" id="navbar-mobile">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <Link href="#">
-                            <a className="navbar-nav-link sidebar-control sidebar-main-toggle d-none d-md-block">
-                                <i className="icon-paragraph-justify3"></i>
-                            </a>
+                        <Link href="#" className="navbar-nav-link sidebar-control sidebar-main-toggle d-none d-md-block">
+                            <i className="icon-paragraph-justify3"></i>
                         </Link>
                     </li>
                 </ul>
@@ -57,25 +53,19 @@ export default function Header() {
 
                 <ul className="navbar-nav">
                     <li className="nav-item dropdown dropdown-user">
-                        <Link href="#">
-                            <a className="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
-                                <Image src="" className="rounded-circle mr-2" height="34" width="34" alt=""></Image>
-                                <span>Admin</span>
-                            </a>
+                        <Link href="#" className="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
+                            <Image src="" className="rounded-circle mr-2" height="34" width="34" alt=""></Image>
+                            <span>Admin</span>
                         </Link>
 
                         <div className="dropdown-menu dropdown-menu-right">.
-                            <Link href="#" >
-                                <a onClick={(e) => handleGetuser(e)} className="dropdown-item">
-                                    <i className="icon-cog5"></i>
-                                    Account settings
-                                </a>
+                            <Link href="#" onClick={(e) => handleGetuser(e)} className="dropdown-item">
+                                <i className="icon-cog5"></i>
+                                Account settings
                             </Link>
-                            <Link href="#" >
-                                <a className="dropdown-item" onClick={(e) => { e.preventDefault(); console.log('asdsad'); }}>
-                                    <i className="icon-switch2"></i>
-                                    Logout
-                                </a>
+                            <Link href="#" className="dropdown-item" onClick={(e) => { e.preventDefault(); console.log('asdsad'); }}>
+                                <i className="icon-switch2"></i>
+                                Logout
                             </Link>
                         </div>
                     </li>

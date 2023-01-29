@@ -1,26 +1,41 @@
 import Hotel from '../../../database/models/Hotel';
 import logger from '../../../services/logger'
+var randomstring = require("randomstring");
+
 
 export default async function Handler(req, res) {
     const { name, phone, phone_2, email, address, address_line_2, city, country, zip, website, about, important_notice } = req.body;
 
     try {
-        console.log(req.method);
+        // console.log(req.method);
         // Get Hotel List
         if (req.method == 'GET') {
-            const hotels = await Hotel.findAll({
-                attributes: ['hotel_id', 'name', 'email', 'phone', 'website'],
-                limit: 100,
-            });
-            res.status(200).json(hotels);
+            let return_data;
+            if (req.query.hotel_id) {
+                return_data = await Hotel.findOne({
+                    where: { hotel_id: req.query.hotel_id },
+                    attributes: {
+                        exclude: ['created_by', 'updated_by', 'created_at', 'updated_at']
+                    }
+                });
+            } else {
+                return_data = await Hotel.findAll({
+                    attributes: {
+                        exclude: ['created_by', 'updated_by', 'created_at', 'updated_at']
+                    },
+                    limit: 100,
+                });
+            }
+            res.status(200).json(return_data);
         }
 
         // Creating New hotel
         if (req.method == 'POST') {
+            let hotel_uri = randomstring.generate();
             try {
                 await Hotel.create({
-                    name, phone, phone_2, email, address, address_line_2, city, country, zip, website, about, important_notice
-                }).then(function (hotel) {
+                    hotel_uri, name, phone, phone_2, email, address, address_line_2, city, country, zip, website, about, important_notice
+                }, { isNewRecord: true }).then(function (hotel) {
                     if (hotel) {
                         res.send(hotel);
                         // res.send(hotel.toJSON());
@@ -39,28 +54,14 @@ export default async function Handler(req, res) {
 
         // Updating New Hotel
         if (req.method == 'PUT') {
+            console.log(req.body);
             const hotel = await Hotel.findOne({
-                where: { hotel_uri: req.body.hotel_uri },
-                attributes: {
-                    exclude: ['created_by', 'updated_by', 'created_at', 'updated_at']
-                },
+                where: { hotel_id: req.body.hotel_id },
             });
-
             if (hotel) {
-                (name) ? (hotel.name = name) : '';
-                (phone) ? (hotel.phone = phone) : '';
-                (phone_2) ? (hotel.phone_2 = phone_2) : '';
-                (email) ? (hotel.email = email) : '';
-                (address) ? (hotel.address = address) : '';
-                (address_line_2) ? (hotel.address_line_2 = address_line_2) : '';
-                (city) ? (hotel.city = city) : '';
-                (country) ? (hotel.country = country) : '';
-                (zip) ? (hotel.zip = zip) : '';
-                (website) ? (hotel.website = website) : '';
-                (about) ? (hotel.about = about) : '';
-                (important_notice) ? (hotel.important_notice = important_notice) : '';
-
-                hotel.save();
+                hotel.update({
+                    name, phone, phone_2, email, website, address, city, country, about, important_notice
+                });
                 res.send(hotel);
             } else {
                 res.status(400).send('Error in updating new record');

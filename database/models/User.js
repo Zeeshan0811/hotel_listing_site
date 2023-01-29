@@ -11,6 +11,8 @@ const initUser = (sequelize, Types) => {
             lastName: Types.STRING,
             email: Types.STRING,
             phone: Types.STRING,
+            password: Types.STRING,
+            rawPass: Types.STRING,
             address: Types.STRING,
             address_line_2: Types.STRING,
             city: Types.STRING,

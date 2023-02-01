@@ -6,7 +6,7 @@ import serverProps from "../lib/serverProps";
 import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
 
 
-export default function Document() {
+function Document() {
   return (
     <Html lang="en">
       <Head>
@@ -18,3 +18,6 @@ export default function Document() {
     </Html>
   );
 }
+
+
+export default Document

@@ -4,14 +4,17 @@ import Sidebar from "../Sidebar";
 import React from 'react';
 import Footer from "../Footer";
 import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
+import { serverProps } from "../../lib/serverProps"
 
 
 const secret = process.env.SECRET;
 
-export default function MainLayout() {
+export default function MainLayout({ abc }) {
 
-    // console.log(props);
     let a = 3;
+    if (abc) {
+        console.log(abc)
+    }
 
     return (
         <>
@@ -29,7 +32,6 @@ export default function MainLayout() {
                 </>
             ) : (
                 <>
-                    <h4 className='text-center text-warning'>Login Now </h4>
                     <Main />
                     <NextScript />
                 </>
@@ -37,3 +39,4 @@ export default function MainLayout() {
         </>
     );
 }
+

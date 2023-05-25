@@ -2,9 +2,11 @@ import User from '../../../database/models/User';
 import logger from '../../../services/logger';
 
 export default async function Handler(req, res) {
+    const { type } = req.query;
+
     try {
         const users = await User.findAll({
-            where: { type: 2 },
+            where: { type: type || 2 },
             attributes: {
                 exclude: ['created_by', 'updated_by', 'created_at', 'updated_at']
             },

@@ -1,5 +1,5 @@
 
-export default function InputField({ column, type, label, id, name, value, onchange, error = false, checked = false }) {
+export default function InputField({ column, type, label, id, name, value, onchange, error = false, checked = false, icon = false }) {
     return (
         <div className={`${column} form-group`}>
             {(type == 'textarea') ? (
@@ -26,7 +26,8 @@ export default function InputField({ column, type, label, id, name, value, oncha
                     <label htmlFor={name}>{`${label} :`}</label>
                     <input name={name} id={(id) ? id : name} type={type} value={value} className={(error == true) ? 'form-control border border-danger' : 'form-control'} onChange={onchange} />
                 </>
-            )}
-        </div>
+            )
+            }
+        </div >
     )
 }

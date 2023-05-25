@@ -1,5 +1,6 @@
 import NextAuth from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
+import axios from "axios";
 import jwt from "jsonwebtoken"
 
 const secret = process.env.SECRET_AUTH_KEY;
@@ -11,33 +12,48 @@ export const authOptions = {
     providers: [
         CredentialsProvider({
             name: "Credentials",
-            // credentials: {
-            //     username: { label: "Username", type: "text", placeholder: "jsmith" },
-            //     password: { label: "Password", type: "password" }
-            // },
             async authorize(credentials, req) {
-                if (credentials.email == "admin@admin.com" && credentials.password == "123456") {
-                    return {
-                        user: {
-                            name: "ABC",
-                            email: "abc@admin.com"
-                        }
-                    }
+                const { email, password } = credentials;
+                const api_url = process.env.API_URL + 'auth/login';
+                const response = await axios.post(api_url, credentials);
+                if (response) {
+                    let user = response.data.user;
+                    return user;
                 }
+
+                // if (credentials.email == "admin@admin.com" && credentials.password == "123456") {
+                //     let user = {
+                //         name: "ABC",
+                //         firstName: "Zeeshan",
+                //         lastName: "Akhtar",
+                //         email: "abcsdfsdf@admin.com"
+                //     }
+                //     return user;
+                // }
                 return null
             }
         })
     ],
+    session: {
+        // jwt: true,
+        strategy: "jwt",
+        maxAge: 30 * 24 * 60 * 60
+    },
+    jwt: {
+        secret: process.env.NEXTAUTH_SECRECT,
+        encryption: true,
+    },
     callbacks: {
-        async session({ session }) {
-            session.user = {
-                name: "ABC",
-                email: "abcsdfsdf@admin.com"
+        async jwt({ token, user }) {
+            if (user) {
+                token.user = user;
             }
-
+            return token;
+        },
+        async session({ session, token }) {
+            session.user = token.user;
             return session;
-        }
-
+        },
     }
 
 }

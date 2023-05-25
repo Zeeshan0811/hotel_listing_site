@@ -10,7 +10,7 @@ export default function Dashboard() {
     // const { user } = useSession()
     // console.log(user)
     const { data: session, status } = useSession({
-        required: true
+        required: true 
     })
 
     // if (status === "authenticated") {
@@ -20,7 +20,7 @@ export default function Dashboard() {
     if (!session) {
         return <></>;
     }
-    // console.log(user)
+    // console.log(session)
     return (
         <div className="mt-5 mb-5 text-center">
             {/* <p>Signed in as {user}</p> */}

@@ -61,8 +61,8 @@ export default async function Handler(req, res) {
 
 
     if (row) {
-        await row.destroy(); // deletes the row
-        res.status(200).json({ success: "Data has deleted succefully." });
+        await row.destroy().then(); // deletes the row
+        await res.status(200).json({ success: "Data has deleted succefully." });
     } else {
         res.status(404).json({ "message": "Data is not found!" });
     }

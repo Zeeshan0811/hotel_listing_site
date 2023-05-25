@@ -1,8 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { signOut } from "next-auth/react"
 
-export default function Sidebar() {
+export default function SidebarSupervision() {
     return (
         <div className="sidebar sidebar-dark sidebar-main sidebar-expand-md no-print">
             <div className="sidebar-mobile-toggler text-center">
@@ -27,52 +26,18 @@ export default function Sidebar() {
                             </Link>
                         </li>
                         <li className="nav-item nav-item-submenu">
-                            <Link href="" className="nav-link" replace>
-                                <i className="icon-stack"></i> <span>Category</span>
-                            </Link>
-                            <ul className="nav nav-group-sub" data-submenu-title="Starter kit">
-                                <li className="nav-item">
-                                    <Link href="/admin/category/add" className="nav-link">
-                                        Add New
-                                    </Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link href="/admin/category/list" className="nav-link">
-                                        Category List
-                                    </Link>
-                                </li>
-                            </ul>
-                        </li>
-                        <li className="nav-item nav-item-submenu">
                             <Link href="#" className="nav-link">
-                                <i className="icon-stack"></i> <span>Services</span>
+                                <i className="icon-stack"></i> <span>Hotel</span>
                             </Link>
                             <ul className="nav nav-group-sub" data-submenu-title="Starter kit">
                                 <li className="nav-item">
-                                    <Link href="/admin/services/add" className="nav-link">
+                                    <Link href="/supervision/hotel/add" className="nav-link">
                                         Add New
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link href="/admin/services/list" className="nav-link">
-                                        Services List
-                                    </Link>
-                                </li>
-                            </ul>
-                        </li>
-                        <li className="nav-item nav-item-submenu">
-                            <Link href="#" className="nav-link">
-                                <i className="icon-stack"></i> <span>Room</span>
-                            </Link>
-                            <ul className="nav nav-group-sub" data-submenu-title="Starter kit">
-                                <li className="nav-item">
-                                    <Link href="/admin/room/add" className="nav-link">
-                                        Add New
-                                    </Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link href="/admin/room/list" className="nav-link">
-                                        Room List
+                                    <Link href="/supervision/hotel/list" className="nav-link">
+                                        Hotel List
                                     </Link>
                                 </li>
                             </ul>
@@ -83,13 +48,14 @@ export default function Sidebar() {
                             </Link>
                             <ul className="nav nav-group-sub" data-submenu-title="Starter kit">
                                 <li className="nav-item">
-                                    <Link href="/admin/user/add" className="nav-link">
-                                        Add New
+                                    <Link href="/supervision/user/list/5" className="nav-link">
+                                        Admin
                                     </Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link href="/admin/user/list" className="nav-link">
-                                        User List
+                                    <Link href="/supervision/user/list/2" className="nav-link">
+                                        Hotel Agent
+                                    </Link>
+                                    <Link href="/supervision/user/list/1" className="nav-link">
+                                        General User
                                     </Link>
                                 </li>
                             </ul>

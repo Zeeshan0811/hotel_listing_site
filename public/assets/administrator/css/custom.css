@@ -11,3 +11,12 @@
 .sidebar-dark {
     background-color: #023952;
 }
+
+/* .navbar-supervision,
+.sidebar-supervision {
+    background-color: #023952;
+} */
+
+.full-page-height {
+    min-height: 100vh;
+}

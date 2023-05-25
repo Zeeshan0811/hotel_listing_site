@@ -1,21 +1,23 @@
-import Header from "../components/Header";
-import Sidebar from "../components/Sidebar";
-import Footer from "../components/Footer";
-import { verify } from "jsonwebtoken";
+import React, { useState, useEffect } from 'react';
+import Header from '../Header'
+import Sidebar from "../Sidebar";
+import Footer from '../Footer'
 
+function Dashboard({ children }) {
 
-export default function MainLayout() {
     return (
         <>
-            {/* <Header />
+            <Header />
             <div className="page-content">
                 <Sidebar />
                 <div className="content-wrapper">
-                    <Main />
-                    <NextScript />
-                    <Footer />
+                    {children}
                 </div>
-            </div> */}
+            </div>
+            <Footer />
         </>
-    );
+    )
 }
+
+
+export default Dashboard;

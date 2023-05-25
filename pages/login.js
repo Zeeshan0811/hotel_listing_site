@@ -35,7 +35,7 @@ export default function Login() {
             if (response.ok) {
                 // Authenticate user
                 setPageState(old => ({ ...old, processing: false }));
-                router.push("/dashboard");
+                router.push("/admin/dashboard");
             } else {
                 setPageState(old => ({ ...old, processing: false, error: response.error }));
             }
@@ -49,34 +49,39 @@ export default function Login() {
         const errorMap = {
             "CredentialsSignin": "Invalid email or password"
         }
-        return errorMap[error] ?? "Unknown error occured"
+        return errorMap[error] ?? "Invalid email or password"
+        // return errorMap[error] ?? "Unknown error occured"
     }
 
 
     return (
-        <>
-            <div className="content">
-                <div className="row justify-content-md-center">
-                    <div className="col-md-6">
-                        <div className="card">
+        <div className="page-content login-cover full-page-height">
+            <div className="content-wrapper">
+                <div className="content d-flex justify-content-end align-items-center">
+                    <form className="login-form wmin-sm-400" onSubmit={(e) => handleAuth(e)}>
+                        <div className="card rounded">
                             <div className="card-body">
-                                <form onSubmit={(e) => handleAuth(e)}>
-                                    {
-                                        pageState.error !== '' && <div className="alert alert-danger" role="alert">{simplifyError(pageState.error)}</div>
-                                    }
-                                    <InputField column="col-md-12" type="email" label="Email" name="email" value={authState.email} onchange={handleChange} />
-                                    <InputField column="col-md-12" type="password" label="Password" name="password" value={authState.password} onchange={handleChange} />
-                                    <div className="text-right">
-                                        {/* <button disabled={pageState.processing} type="button" className="btn btn-primary" onClick={handleAuth}>Submit <i className="icon-paperplane ml-2"></i></button> */}
-                                        <button disabled={pageState.processing} type="submit" className="btn btn-primary">Submit <i className="icon-paperplane ml-2"></i></button>
-                                    </div>
-                                </form>
+                                <div className="text-center mb-3">
+                                    <i className="icon-reading icon-2x text-slate-300 border-slate-300 border-3 rounded-round p-3 mb-3 mt-1"></i>
+                                    <h5 className="mb-0">Login to your account</h5>
+                                    <span className="d-block text-muted">Your credentials</span>
+                                </div>
+
+                                {
+                                    pageState.error !== '' && <div className="alert alert-danger" role="alert">{simplifyError(pageState.error)}</div>
+                                }
+                                <InputField column="col-md-12" type="email" label="Email" name="email" value={authState.email} onchange={handleChange} />
+                                <InputField column="col-md-12" type="password" label="Password" name="password" value={authState.password} onchange={handleChange} />
+                                <div className="text-right">
+                                    {/* <button disabled={pageState.processing} type="button" className="btn btn-primary" onClick={handleAuth}>Submit <i className="icon-paperplane ml-2"></i></button> */}
+                                    <button disabled={pageState.processing} type="submit" className="btn btn-primary btn-block">Sign in </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

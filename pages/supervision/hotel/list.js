@@ -18,6 +18,7 @@ import Action from "../../../components/Action";
 const List = () => {
     const [hotels, setHotels] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
+    const [reload, setReload] = useState(0)
     const api_url = `${process.env.API_URL}` + 'hotel';
     const getHotels = async () => {
         let response = await axios.get(api_url);
@@ -27,8 +28,11 @@ const List = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        getHotels()
-    }, [])
+        setTimeout(getHotels, 3000);
+
+        // getHotels()
+        // console.log(reload);
+    }, [reload])
 
     if (isLoading) {
         return <p>Loading....</p>
@@ -67,7 +71,7 @@ const List = () => {
                                                     <td>{hotel.email}</td>
                                                     <td>{hotel.website}</td>
                                                     <td>
-                                                        <Action index_key={hotel.hotel_id} edit_link={'/admin/hotel/edit/'} delete_link={'admin/hotel/delete/'} />
+                                                        <Action index_key={hotel.hotel_id} edit_link={'/supervision/hotel/edit'} delete_link={'delete/hotel/'} setReload={(setReload)} />
                                                     </td>
                                                 </tr>
                                             )

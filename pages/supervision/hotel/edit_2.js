@@ -5,7 +5,7 @@ import SubHeader from "../../../components/SubHeader";
 import InputField from "../../../components/form/InputField";
 import Router from 'next/router';
 
-export default function Add() {
+export default function Edit() {
     const router = useRouter();
     const api_get_hotel = `${process.env.API_URL}` + 'hotel';
     const api_update_hotel = `${process.env.API_URL}` + 'hotel';
@@ -134,7 +134,5 @@ export default function Add() {
             </div>
         </>
     )
-
-
 }
 
